@@ -23,7 +23,7 @@ const titles = [
     },
     {
         name: "Lord of the Flame",
-        description: "The highest title given to those who have burned the entire whitepaper to ashes with their flame. Their fire not only burns but also illuminates the path for others. The legends of Fogo are those who inspire and lead the whole world.",
+        description: "The highest title given to those who have burned the entire whitepaper to ashes with their flame. Their fire not only burns but also illuminates the path for others. Lords of the Flame are those who inspire and lead the whole world.",
         minScore: 12
     }
 ];
