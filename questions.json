@@ -36,6 +36,15 @@
     ]
   },
   {
+    "question": "What are the three main innovations that Fogo contributes?",
+    "answers": [
+      {"text": "Sharding, plasma chains, and rollups", "correct": false},
+      {"text": "Unified client, multi-local consensus, curated validator set", "correct": true},
+      {"text": "Zero-knowledge proofs, sidechains, and bridges", "correct": false},
+      {"text": "Smart contracts, DeFi protocols, and NFTs", "correct": false}
+    ]
+  },
+  {
     "question": "What is the initial validator set size in Fogo?",
     "answers": [
       {"text": "5–10", "correct": false},
@@ -117,3 +126,4 @@
     ]
   }
 ]
+
