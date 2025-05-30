@@ -1,11 +1,11 @@
 [
   {
-    "question": "Which blockchain protocol is Fogo built upon?",
+    "question": "What virtual machine does Fogo use for smart contract execution?",
     "answers": [
-      {"text": "Ethereum", "correct": false},
-      {"text": "Solana", "correct": true},
-      {"text": "Bitcoin", "correct": false},
-      {"text": "Polkadot", "correct": false}
+      {"text": "Ethereum Virtual Machine (EVM)", "correct": false},
+      {"text": "Solana Virtual Machine (SVM)", "correct": true},
+      {"text": "WebAssembly (WASM)", "correct": false},
+      {"text": "Bitcoin Script", "correct": false}
     ]
   },
   {
@@ -101,10 +101,19 @@
   {
     "question": "When is Fogo expected to launch its mainnet?",
     "answers": [
-      {"text": "Q1 2025", "correct": false},
-      {"text": "Q2 2025", "correct": true},
-      {"text": "Q4 2024", "correct": false},
-      {"text": "Not specified", "correct": false}
+      {"text": "Q4 2025", "correct": false},
+      {"text": "Q2 2025", "correct": false},
+      {"text": "Q3 2025", "correct": true},
+      {"text": "Q1 2026", "correct": false}
+    ]
+  },
+  {
+    "question": "Do you love Fogo?",
+    "answers": [
+      {"text": "Yes", "correct": true},
+      {"text": "Definitely", "correct": true},
+      {"text": "Of course", "correct": true},
+      {"text": "Fogo", "correct": true}
     ]
   }
 ]
