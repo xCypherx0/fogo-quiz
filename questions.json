@@ -1,0 +1,110 @@
+[
+  {
+    "question": "Which blockchain protocol is Fogo built upon?",
+    "answers": [
+      {"text": "Ethereum", "correct": false},
+      {"text": "Solana", "correct": true},
+      {"text": "Bitcoin", "correct": false},
+      {"text": "Polkadot", "correct": false}
+    ]
+  },
+  {
+    "question": "Which client is selected as the canonical implementation for Fogo?",
+    "answers": [
+      {"text": "Jump Crypto's Firedancer", "correct": true},
+      {"text": "Geth", "correct": false},
+      {"text": "Parity", "correct": false},
+      {"text": "Hyperledger Fabric", "correct": false}
+    ]
+  },
+  {
+    "question": "What new consensus mechanism does Fogo introduce?",
+    "answers": [
+      {"text": "Proof of Work", "correct": false},
+      {"text": "Delegated Proof of Stake", "correct": false},
+      {"text": "Multi-local consensus", "correct": true},
+      {"text": "PBFT", "correct": false}
+    ]
+  },
+  {
+    "question": "What enables Fogo to combine low latency and geographic decentralization?",
+    "answers": [
+      {"text": "Global consensus", "correct": false},
+      {"text": "Static regional clusters", "correct": false},
+      {"text": "Multi-local consensus with dynamic colocation", "correct": true},
+      {"text": "Random validator distribution", "correct": false}
+    ]
+  },
+  {
+    "question": "What is the initial validator set size in Fogo?",
+    "answers": [
+      {"text": "5–10", "correct": false},
+      {"text": "20–50", "correct": true},
+      {"text": "100–200", "correct": false},
+      {"text": "Unlimited", "correct": false}
+    ]
+  },
+  {
+    "question": "Which mode is activated when zone consensus fails or voting fails?",
+    "answers": [
+      {"text": "Network halt", "correct": false},
+      {"text": "Global consensus mode", "correct": true},
+      {"text": "Fall back to Ethereum", "correct": false},
+      {"text": "Block suspension", "correct": false}
+    ]
+  },
+  {
+    "question": "Which mechanism allows paying fees without using SOL?",
+    "answers": [
+      {"text": "fee_payer_unsigned transactions + SPL tokens", "correct": true},
+      {"text": "Delegated signers", "correct": false},
+      {"text": "Zero-knowledge proofs", "correct": false},
+      {"text": "EIP-2771 meta-transactions", "correct": false}
+    ]
+  },
+  {
+    "question": "What key management system ensures safety during zone changes?",
+    "answers": [
+      {"text": "One global key", "correct": false},
+      {"text": "Two-tier: global and zone-specific keys", "correct": true},
+      {"text": "Multisig", "correct": false},
+      {"text": "Hardware wallets only", "correct": false}
+    ]
+  },
+  {
+    "question": "What incentivizes validators to run the fastest client in Fogo?",
+    "answers": [
+      {"text": "Mandatory protocol rule", "correct": false},
+      {"text": "Economic pressure via dynamic block parameters", "correct": true},
+      {"text": "Social responsibility", "correct": false},
+      {"text": "Manual selection by operators", "correct": false}
+    ]
+  },
+  {
+    "question": "What block parameters apply in Fogo's global consensus?",
+    "answers": [
+      {"text": "Fixed 1s block time, larger block size", "correct": false},
+      {"text": "400ms block time, smaller block size", "correct": true},
+      {"text": "100ms block time, small size", "correct": false},
+      {"text": "500ms block time, large size", "correct": false}
+    ]
+  },
+  {
+    "question": "What type of blockchain is Fogo?",
+    "answers": [
+      {"text": "Layer 2", "correct": false},
+      {"text": "Layer 0", "correct": false},
+      {"text": "Layer 1 (L1)", "correct": true},
+      {"text": "Sidechain", "correct": false}
+    ]
+  },
+  {
+    "question": "When is Fogo expected to launch its mainnet?",
+    "answers": [
+      {"text": "Q1 2025", "correct": false},
+      {"text": "Q2 2025", "correct": true},
+      {"text": "Q4 2024", "correct": false},
+      {"text": "Not specified", "correct": false}
+    ]
+  }
+]

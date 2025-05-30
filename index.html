@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Well Do You Really Know Fogo?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Main Screen -->
+        <div class="main-screen" id="mainScreen">
+            <h1>How Well Do You Really Know Fogo?</h1>
+            <div class="mascot-container">
+                <div class="mascot" id="mascot">
+                    <!-- Здесь будет загружаться логотип -->
+                    <img src="mascot-logo.png" alt="Fogo Mascot" id="mascotImage" onerror="this.style.display='none'; document.getElementById('mascotFallback').style.display='flex';">
+                    <div class="mascot-fallback" id="mascotFallback">🔥</div>
+                </div>
+                <div class="mascot-text">
+                    <p class="subtitle">Test your knowledge and prove your mastery!</p>
+                </div>
+                <button class="start-btn" onclick="startQuiz()">
+                    <img src="logo.png" alt="Logo" class="start-btn-logo">
+                    LFoGo
+                </button>
+            </div>
+        </div>
+
+        <div class="quiz-screen" id="quizScreen">
+            <div class="timer" id="timer">60</div>
+            <div class="question-counter" id="questionCounter">Question 1 of 12</div>
+            <div class="question" id="question"></div>
+            <div class="answers" id="answers"></div>
+        </div>
+
+        <div class="results-screen" id="resultsScreen">
+            <h2>Quiz Complete!</h2>
+            <div class="score" id="finalScore"></div>
+            <div class="title-card" id="titleCard">
+                <div class="title-name" id="titleName"></div>
+                <div class="title-description" id="titleDescription"></div>
+            </div>
+            <button class="play-again-btn" onclick="resetQuiz()">Play Again</button>
+        </div>
+    </div>
+
+    <div class="animation-overlay" id="animationOverlay"></div>
+
+    <script src="index.js"></script>
+</body>
+</html>
