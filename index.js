@@ -84,6 +84,9 @@ function startQuiz() {
 }
 
 function showQuestion() {
+    console.log('Current question index:', currentQuestion);
+    console.log('Total questions:', questions.length);
+    
     if (currentQuestion >= questions.length) {
         showResults();
         return;
@@ -194,7 +197,9 @@ function createAnimation(symbol, isCorrect) {
 }
 
 function nextQuestion() {
+    console.log('Moving to next question. Current:', currentQuestion);
     currentQuestion++;
+    console.log('New question index:', currentQuestion);
     showQuestion();
 }
 
