@@ -40,6 +40,7 @@ async function loadQuestions() {
         }
         questions = await response.json();
         console.log('Вопросы загружены успешно:', questions.length);
+        console.log('Все вопросы:', questions);
     } catch (error) {
         console.error('Ошибка загрузки вопросов:', error);
         questions = getBackupQuestions();
