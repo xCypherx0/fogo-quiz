@@ -1,4 +1,3 @@
-// Переменные игры
 let questions = [];
 let currentQuestion = 0;
 let score = 0;
@@ -6,7 +5,6 @@ let timeLeft = 60;
 let timer;
 let isAnswering = false;
 
-// Титулы для результатов
 const titles = [
     {
         name: "Smoldering Spark",
@@ -30,12 +28,10 @@ const titles = [
     }
 ];
 
-// Загрузка вопросов при запуске страницы
 document.addEventListener('DOMContentLoaded', function() {
     loadQuestions();
 });
 
-// Функция загрузки вопросов из JSON файла
 async function loadQuestions() {
     try {
         const response = await fetch('questions.json');
@@ -46,12 +42,10 @@ async function loadQuestions() {
         console.log('Вопросы загружены успешно:', questions.length);
     } catch (error) {
         console.error('Ошибка загрузки вопросов:', error);
-        // Если не удалось загрузить JSON, используем резервные вопросы
         questions = getBackupQuestions();
     }
 }
 
-// Резервные вопросы на случай ошибки загрузки JSON
 function getBackupQuestions() {
     return [
         {
@@ -75,7 +69,6 @@ function getBackupQuestions() {
     ];
 }
 
-// Функция начала квиза
 function startQuiz() {
     if (questions.length === 0) {
         alert('Вопросы еще загружаются, подождите немного...');
@@ -89,7 +82,6 @@ function startQuiz() {
     showQuestion();
 }
 
-// Показать текущий вопрос
 function showQuestion() {
     if (currentQuestion >= questions.length) {
         showResults();
@@ -115,7 +107,6 @@ function showQuestion() {
     isAnswering = false;
 }
 
-// Запуск таймера
 function startTimer() {
     timeLeft = 60;
     updateTimer();
@@ -131,13 +122,11 @@ function startTimer() {
     }, 1000);
 }
 
-// Обновление отображения таймера
 function updateTimer() {
     document.getElementById('timer').textContent = timeLeft;
     document.getElementById('timer').style.color = timeLeft <= 10 ? '#e74c3c' : '#ffa500';
 }
 
-// Выбор ответа
 function selectAnswer(selectedIndex) {
     if (isAnswering) return;
     isAnswering = true;
@@ -147,19 +136,26 @@ function selectAnswer(selectedIndex) {
     const buttons = document.querySelectorAll('.answer-btn');
     const selectedButton = buttons[selectedIndex];
 
-    // Найти правильный ответ
     const correctIndex = question.answers.findIndex(answer => answer.correct === true);
     
-    if (selectedIndex === correctIndex) {
-        selectedButton.classList.add('correct');
+    if (currentQuestion === questions.length - 1) {
+        buttons.forEach(button => {
+            button.classList.add('correct');
+        });
         score++;
         createAnimation('✓', true);
     } else {
-        selectedButton.classList.add('incorrect');
-        if (correctIndex !== -1) {
-            buttons[correctIndex].classList.add('correct');
+        if (selectedIndex === correctIndex) {
+            selectedButton.classList.add('correct');
+            score++;
+            createAnimation('✓', true);
+        } else {
+            selectedButton.classList.add('incorrect');
+            if (correctIndex !== -1) {
+                buttons[correctIndex].classList.add('correct');
+            }
+            createAnimation('✗', false);
         }
-        createAnimation('✗', false);
     }
 
     setTimeout(() => {
@@ -167,7 +163,6 @@ function selectAnswer(selectedIndex) {
     }, 2000);
 }
 
-// Создание анимации
 function createAnimation(symbol, isCorrect) {
     const overlay = document.getElementById('animationOverlay');
     
@@ -197,26 +192,22 @@ function createAnimation(symbol, isCorrect) {
     }
 }
 
-// Переход к следующему вопросу
 function nextQuestion() {
     currentQuestion++;
     showQuestion();
 }
 
-// Показать результаты
 function showResults() {
     document.getElementById('quizScreen').style.display = 'none';
     document.getElementById('resultsScreen').style.display = 'block';
     
     document.getElementById('finalScore').textContent = `You scored ${score} out of ${questions.length} questions correctly!`;
     
-    // Найти подходящий титул (ищем с конца массива для получения наивысшего подходящего титула)
     const title = titles.slice().reverse().find(t => score >= t.minScore);
     document.getElementById('titleName').textContent = title.name;
     document.getElementById('titleDescription').textContent = title.description;
 }
 
-// Сброс квиза для новой игры
 function resetQuiz() {
     document.getElementById('resultsScreen').style.display = 'none';
     document.getElementById('mainScreen').style.display = 'block';
